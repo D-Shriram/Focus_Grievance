@@ -12,6 +12,8 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(Router);
 dotenv.config({path:'./config.env'});
+const cors = require('cors');
+app.use(cors());
 
 require('./middleware/authenticate');
 

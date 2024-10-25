@@ -46,7 +46,7 @@ const GrievanceStatus=()=>{
            for(let j=0;j<d[i].grievances.length;j++){
                //console.log("Inside Loop: "+d[i].grievances[j].name + " "+ d[i].grievances[j].dept
                //+ " " + d[i].grievances[j].grievance);
-               if(d[i].grievances[j].dept=="Service Provider"){
+               if(d[i].grievances[j].dept=="Transport"){
                Gdata[a]=d[i].grievances[j];
                a++;
                }

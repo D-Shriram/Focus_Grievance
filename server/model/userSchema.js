@@ -13,10 +13,16 @@ const userSchema=new mongoose.Schema({
         type: String,
         required: true,
         unique:[true,"Email ID already exists"],
-        validate(value){
-            if(!validator.isEmail(value)){
-                throw new Error("INVALID EMAIL");
-            }
+        // validate(value){
+        //     if(!validator.isEmail(value)){
+        //         throw new Error("INVALID EMAIL");
+        //     }
+        // }
+        validate: {
+            validator: function(v) {
+                return /^[a-zA-Z0-9._%+-]+@kluniversity\.in$/.test(v);
+            },
+            message: props => `${props.value} is not a valid email address! Email must end with @kluniversity.in`
         }
     },
     password:{
@@ -29,12 +35,20 @@ const userSchema=new mongoose.Schema({
     },
     phone:{
         type: Number,
-        //minlength:10,
-        //maxlength:10,
+        minlength:10,
+        maxlength:10,
         required: true,
-        //unique: true
+        unique: true
     },
     address:{
+        type: String,
+        required: true
+    },
+    year:{
+        type: String,
+        required: true
+    },
+    program:{
         type: String,
         required: true
     },

@@ -3,6 +3,8 @@ import phone from '../images/telephone.png';
 import email from '../images/email.png';
 import address from '../images/address.png';
 import { useEffect, useState } from 'react';
+import './Grievance.css'; // Import the CSS file
+
 
 const Grievance=()=>{
     const [userData,setUserData] =useState({
@@ -103,13 +105,29 @@ const Grievance=()=>{
                     placeholder="Your Phone Number" required="true"/>
                   </div>
 <br />
-                  <label for="complaint">Choose a department:</label>
+                  <label for="complaint">Choose your criteria:</label>
                     <select name="dept" id="complaint" onChange={handleInputs}>
-                    <option value="">--Select department--</option>
-                     <option value="Education">Education</option>
-                     <option value="Health Ministry">Health Ministry</option>
-                     <option value="Service Provider">Service Provider</option>
+                    <option value="">--Select criteria--</option>
+                     {/* <option value="Education">Education</option> */}
+                     {/* <option value="Health Ministry">Health Ministry</option> */}
+                     {/* <option value="Service Provider">Service Provider</option> */}
+                     <option value="Academics Progression">Academics Progression</option>
+                     <option value="ERP or LMS">ERP or LMS</option>
+                     <option value="Classroom Eminities">Classroom Eminities</option>
+                     <option value="Social Immersive Learning Activities">Social Immersive Learning Activities</option>
+                     <option value="Global Challenges">Global Challenges</option>
+                     <option value="Placement Relations">Placement Relations</option>
+                     <option value="Hostel Accommodation">Hostel Accommodation</option>
+                     <option value="Transportation Services">Transportation Services</option>
+                     <option value="Campus Security Concerns">Campus Security Concerns</option>
+                     <option value="Career Counselling">Career Counselling</option>
+                     <option value="Personal Concerns & Self-Development
+">Personal Concerns & Self-Development
+</option>
                      <option value="Others">Others</option>
+                     {/* <option value="Sil">Mental Health</option> */}
+                     {/* <option value="Sil">SIL</option> */}
+                     {/* <option value="Transport">Transport </option> */}
                     </select>
 <br />
                   <div className="contact_form_text">
@@ -133,43 +151,9 @@ const Grievance=()=>{
           </div>
         </div>
       </div>
-      <div className="contact_info bg-dark text-white">
-        <div className="container-fluid">
-        <br />
-         <div className="row">
-           <div className="col-lg-12 row">   
-             <div className="contact_info_item col-1 abc">
-               <img src={phone} alt="not found" height="50" width="50"/>
-             </div>
-             <div className="contact_info_item col-2 abc">
-               <h6>Phone</h6>
-               <p>+1800 266 1236</p>
-             </div>
 
-<div className="col-1"></div>
-             
-             <div className="contact_info_item col-1 abc">
-               <img src={email} alt="not found" height="50" width="50"/>
-             </div>
-             <div className="contact_info_item col-3 abc">
-               <h6>Email</h6>
-               <p>filemygrievance@gmail.com</p>
-             </div>
-             
+        
 
-<div className="col-1"></div>
-             <div className="contact_info_item col-1 abc">
-               <img src={address} alt="not found" height="50" width="50"/>
-             </div>
-             <div className="contact_info_item col-2 abc">
-               <h6>Address</h6>
-               <p>New Delhi</p>
-             </div>
-
-           </div>
-         </div>
-        </div>
-      </div>
     </>
   )
 }

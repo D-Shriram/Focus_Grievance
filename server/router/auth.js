@@ -20,9 +20,9 @@ router.get("/",(req,res)=>{
 });
 
 router.post("/register",async(req,res)=>{
-    const {name,email,password,cpassword,phone,address}=req.body;
+    const {name,email,password,cpassword,phone,address,year,program}=req.body;
     
-    if(!name || !email || !phone || !address || !password|| !cpassword){
+    if(!name || !email || !phone || !address || !password|| !cpassword|| !year || !program){
       return res.status(400).json({error: "Please fill the data properly"});
     }
 
@@ -34,14 +34,15 @@ router.post("/register",async(req,res)=>{
             return res.status(400).json({ error:"Passwords do not match"})
           }
           else{
-            const user = new User({name,email,password,cpassword,phone,address});
+            const user = new User({name,email,password,cpassword,phone,address,year,program});
              
             const userRegister=await user.save();
           if(userRegister){
+            res.status(200).json({ message: "Registration Successful" });
             const message={
               to:`${email}`,
-              from: 'dangerouspanditain@gmail.com',
-              name:"Grievace Portal",
+              from: 'shriramuchiha66@gmail.com',
+              name:"FOCUS Grievace ",
               subject:'Successfully Registered!!',
               text:`Congratulations ${name}, You have been successfully registered`
               //html:'<h1>We will inform you when</h1>'
@@ -54,7 +55,8 @@ router.post("/register",async(req,res)=>{
             
             res.status(200).json({message:"Registration Successful"})
           }else{
-            return res.status(400).json({error: "Failed to register"})
+            // return res.status(400).json({error: "Failed to register"})
+            res.status(400).json({ error: "Failed to register" })
         }
           }
      } catch(err){
@@ -107,7 +109,11 @@ router.post("/signin",async(req,res)=>{
   } 
 })
 
-router.get("/about",authenticate,(req,res)=>{
+router.get("/myprofile",authenticate,(req,res)=>{
+  res.send(req.rootUser);
+});
+
+router.get("/aboutus",authenticate,(req,res)=>{
   res.send(req.rootUser);
 });
 
@@ -132,8 +138,8 @@ router.post("/grievance",authenticate,async(req,res)=>{
 
           const message={
             to:`${email}`,
-            from: 'dangerouspanditain@gmail.com',
-            //name:"Grievace Portal",
+            from: 'shriramuchiha66@gmail.com',
+            name:"FOCUS Grievance ",
             subject:'Grievance Filed!!',
             text:`${name}, Your grievance has been successfully filed`
           };
@@ -251,7 +257,7 @@ router.post("/aAbBcC/updatedocs",async(req,res)=>{
       
       const message={
         to:`${email}`,
-        from: 'dangerouspanditain@gmail.com',
+        from: 'shriramuchiha66@gmail.com',
         subject:'An update found',
         text:`Hello, ${dept} Department had an update on your grievance number ${gId} and 
         the status has been updated to ${status}. Find the feedback associated to your grievance:

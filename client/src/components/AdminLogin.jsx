@@ -16,13 +16,13 @@ const AdminLogin =()=>{
            window.alert("Login Successful");
             history.push("/education"); 
         }
-        else if(email==="admin.health@gmail.com" && password==="health"){
+        else if(email==="admin.sil@gmail.com" && password==="sil"){
             window.alert("Login Successful");
-             history.push("/health"); 
+             history.push("/sil"); 
          }
-         else if(email==="admin.service@gmail.com" && password==="service"){
+         else if(email==="admin.transport@gmail.com" && password==="transport"){
             window.alert("Login Successful");
-             history.push("/service"); 
+             history.push("/transport"); 
          }
         else{
             window.alert("You don't have this access");

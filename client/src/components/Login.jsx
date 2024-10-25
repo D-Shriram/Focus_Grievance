@@ -41,6 +41,11 @@ const Login=()=>{
   return(
     <>
       <section className="signup">
+        <div>
+        <br>
+        </br><br>
+        </br>
+        </div>
        <div className="container mt-5">
          <div className="signup-content">
            <div className="signup-form row">
@@ -87,43 +92,21 @@ const Login=()=>{
          </div>
        </div>
       </section>
-      <div className="contact_info bg-dark text-white mt-5">
-        <div className="container-fluid">
-        <br />
-         <div className="row">
-           <div className="col-lg-12 row">   
-             <div className="contact_info_item col-1 abc">
-               <img src={phone} alt="not found" height="50" width="50"/>
-             </div>
-             <div className="contact_info_item col-2 abc">
-               <h6>Phone</h6>
-               <p>+1800 266 1236</p>
-             </div>
-
-<div className="col-1"></div>
-             
-             <div className="contact_info_item col-1 abc">
-               <img src={mail} alt="not found" height="50" width="50"/>
-             </div>
-             <div className="contact_info_item col-3 abc">
-               <h6>Email</h6>
-               <p>filemygrievance@gmail.com</p>
-             </div>
-             
-
-<div className="col-1"></div>
-             <div className="contact_info_item col-1 abc">
-               <img src={address} alt="not found" height="50" width="50"/>
-             </div>
-             <div className="contact_info_item col-2 abc">
-               <h6>Address</h6>
-               <p>New Delhi</p>
-             </div>
-
-           </div>
-         </div>
-        </div>
+      <div>
+        <br>
+        </br>
+        <br>
+        </br>
+        <br>
+        </br>
+        <br>
+        </br>
+        <br>
+        </br><br>
+        </br><br>
+        </br>
       </div>
+
     </>
   )
 }
