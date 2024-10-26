@@ -6,8 +6,8 @@ const jwt=require('jsonwebtoken');
 const authenticate=require('../middleware/authenticate');
 
 const sgMail = require('@sendgrid/mail');
-const API_KEY="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";
-sgMail.setApiKey(API_KEY);
+// const API_KEY="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";
+// sgMail.setApiKey(API_KEY);
 
 require('../db/conn');
 const User=require('../model/userSchema');
